@@ -44,5 +44,10 @@ namespace GroupX_HE130699_QuangHoang_Lab3.DAL {
             return DAO.UpdateTable(cmd);
         }
 
+        public static Boolean deeee(int bookNumber) {
+            SqlCommand cmd = new SqlCommand("delete Book where bookNumber=@bookNumber");
+            cmd.Parameters.AddWithValue("@bookNumber", bookNumber);
+            return DAO.UpdateTable(cmd);
+        }
     }
 }
