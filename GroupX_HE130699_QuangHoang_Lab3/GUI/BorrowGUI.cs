@@ -38,48 +38,6 @@ namespace GroupX_HE130699_QuangHoang_Lab3.GUI {
 
         private void btnCondition_Click(object sender, EventArgs e) {
 
-            int copyNumber;
-            try {
-                copyNumber = int.Parse(txtCopyNumber.Text);
-            } catch {
-                MessageBox.Show("Copy number must be a integer!");
-                txtCopyNumber.Focus();
-                return;
-            }
-
-            errorBorrow error = checkCondition(int.Parse(txtBorrowerNumber.Text), int.Parse(txtCopyNumber.Text), out c, out r);
-            string str = "";
-
-            switch (error) {
-                case errorBorrow.CopyNotExist:
-                    str = "No this copy number, so you can't borrow!";
-                    txtCopyNumber.Focus();
-                    break;
-                case errorBorrow.CopyReferenced:
-                    str = "It is referenced, so you can't borrow!";
-                    txtCopyNumber.Focus();
-                    break;
-                case errorBorrow.CopyBorrowed:
-                    str = "It is borrwed, so you can't borrow!";
-                    txtCopyNumber.Focus();
-                    break;
-                case errorBorrow.CopyReserved:
-                    str = "It is reserved by other, so you can't borrow!";
-                    txtCopyNumber.Focus();
-                    break;
-                case errorBorrow.Connect:
-                    str = "Can't connect to Database, so you can't borrow!";
-                    break;
-
-            }
-
-
-            if (str != "") {
-                MessageBox.Show(str);
-                return;
-            }
-
-            displayButtons(3);
         }
 
         private errorBorrow checkCondition(int borrowerNumber, int copyNumber, out Copy c, out Reservation r) {

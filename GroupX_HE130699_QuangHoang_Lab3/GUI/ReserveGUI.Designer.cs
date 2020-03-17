@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnReserve = new System.Windows.Forms.Button();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -37,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCode = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,6 +74,17 @@
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
             // 
+            // dtpDate
+            // 
+            this.dtpDate.Enabled = false;
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.dtpDate.Location = new System.Drawing.Point(423, 345);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(86, 20);
+            this.dtpDate.TabIndex = 14;
+            this.dtpDate.Value = new System.DateTime(2020, 3, 14, 18, 35, 40, 0);
+            // 
             // btnReserve
             // 
             this.btnReserve.Enabled = false;
@@ -97,9 +108,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(98, 188);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(527, 123);
             this.dataGridView1.TabIndex = 10;
             // 
@@ -192,17 +206,6 @@
             this.lblCode.Size = new System.Drawing.Size(75, 13);
             this.lblCode.TabIndex = 0;
             this.lblCode.Text = "Member code:";
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Enabled = false;
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.dtpDate.Location = new System.Drawing.Point(423, 345);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(86, 20);
-            this.dtpDate.TabIndex = 14;
-            this.dtpDate.Value = new System.DateTime(2020, 3, 14, 18, 35, 40, 0);
             // 
             // ReserveGUI
             // 

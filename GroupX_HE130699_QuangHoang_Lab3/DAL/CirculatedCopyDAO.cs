@@ -33,7 +33,7 @@ namespace GroupX_HE130699_QuangHoang_Lab3.DAL {
 
         public static DataTable GetBorrowedCopies(int borrowerNumber) {
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("select * from CirculatedCopy where borrowerNumber = @bn", conn);
+            SqlCommand cmd = new SqlCommand("select * from CirculatedCopy where borrowerNumber = @bn and returnedDate is null", conn);
             cmd.Parameters.AddWithValue("@bn", borrowerNumber);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

@@ -43,9 +43,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(350, 73);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(381, 150);
             this.dataGridView1.TabIndex = 29;
             // 
@@ -68,7 +71,7 @@
             this.btnCondition.TabIndex = 27;
             this.btnCondition.Text = "Check borrow condition";
             this.btnCondition.UseVisualStyleBackColor = true;
-            this.btnCondition.Click += new System.EventHandler(this.btnCondition_Click);
+            this.btnCondition.Click += new System.EventHandler(this.btnMember_Click);
             // 
             // btnMember
             // 
@@ -112,6 +115,7 @@
             this.txtBorrowedDate.Name = "txtBorrowedDate";
             this.txtBorrowedDate.Size = new System.Drawing.Size(100, 20);
             this.txtBorrowedDate.TabIndex = 22;
+            this.txtBorrowedDate.Click += new System.EventHandler(this.txtBorrowedDate_Validated);
             // 
             // txtDueDate
             // 

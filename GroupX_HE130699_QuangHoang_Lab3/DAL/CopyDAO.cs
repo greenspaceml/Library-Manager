@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GroupX_HE130699_QuangHoang_Lab3.DAL {
     class CopyDAO {
@@ -35,7 +36,7 @@ namespace GroupX_HE130699_QuangHoang_Lab3.DAL {
                 while (reader.Read()) {
                     c.BookNumber = (int)reader["bookNumber"];
                     c.SequenceNumber = (int)reader["sequenceNumber"];
-                    //c.Type = (char)reader["type"];
+                    c.Type = char.Parse(reader["type"].ToString());
                     c.Price = (double)reader["price"];
                 }
             }
@@ -61,6 +62,17 @@ namespace GroupX_HE130699_QuangHoang_Lab3.DAL {
             cmd.Parameters.AddWithValue("@type", b.Type);
             cmd.Parameters.AddWithValue("@price", b.Price);
 
+            return DAO.UpdateTable(cmd);
+        }
+        public static bool Update1(int b, string type) {
+
+            SqlCommand cmd = new SqlCommand("update copy set " +
+                " type =@type " +
+                " where copyNumber =@copyNumber");
+
+            cmd.Parameters.AddWithValue("@copyNumber", b);
+            cmd.Parameters.AddWithValue("@type", type);
+            MessageBox.Show(b + "");
             return DAO.UpdateTable(cmd);
         }
 

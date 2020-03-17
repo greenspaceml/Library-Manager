@@ -96,12 +96,7 @@ namespace GroupX_HE130699_QuangHoang_Lab3.GUI {
 
         private void Return(CirculatedCopy cc) {
             CirculatedCopyDAO.Update(cc);
-
-            Copy c = CopyDAO.GetCopy(cc.CopyNumber);
-
-            // update type = 'A' in copy
-            c.Type = 'A';
-            CopyDAO.Update(c);
+            CopyDAO.Update1(cc.CopyNumber, "A");
 
         }
 
