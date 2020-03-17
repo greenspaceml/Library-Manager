@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GroupX_HE130699_QuangHoang_Lab3.DAL {
-    class BookDAO {
+    class BookDAO {   
         public static DataTable GetDataTable() {
             string cmd = "select * from Book";
             return DAO.GetDataTable(cmd);
